@@ -12,6 +12,10 @@ const PORT = process.env.PORT||3500
 app.use(cors()) 
 app.use(express.json())
 
+app.get('/',(req,res)=>{
+    res.status(200).send("It Works!")
+})
+
 mongoose.connect(process.env.DB_URL)
 const db = mongoose.connection
 db.on('error', (errorMessage) => console.log(errorMessage))
